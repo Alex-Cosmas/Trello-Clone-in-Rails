@@ -20,9 +20,31 @@ class BoardsController < ApplicationController
     end
   end
 
+  def update
+    # @board = Board.find(params[:id])
+
+    authorize board
+
+    if @board.update(board_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    authorize board
+    board.destroy
+    redirect_to root_path
+  end
+
   private
 
   def board_params
     params.require(:board).permit(:name)
+  end
+
+  def board
+    @board ||= Board.find(params[:id])
   end
 end
