@@ -13,9 +13,7 @@ class BoardPolicy < ApplicationPolicy
   end
 
   def edit?
-
     record.user == user
-
   end
 
   def update?

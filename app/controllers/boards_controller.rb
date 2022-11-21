@@ -6,8 +6,12 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = Board.find(params[:id])
-    authorize @board
+    # @board = Board.find(params[:id])
+    authorize board
+  end
+
+  def show
+
   end
 
   def create
@@ -22,9 +26,7 @@ class BoardsController < ApplicationController
 
   def update
     # @board = Board.find(params[:id])
-
     authorize board
-
     if @board.update(board_params)
       redirect_to root_path
     else

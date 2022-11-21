@@ -37,3 +37,5 @@ group :test do
 end
 
 gem "pundit", "~> 2.2"
+
+gem "hotwire-rails", "~> 0.1.3"
