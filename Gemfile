@@ -6,7 +6,7 @@ ruby "3.1.2"
 gem "bootsnap", require: false
 gem "devise"
 gem "importmap-rails"
-gem "jbuilder"
+gem 'jsonapi-serializer'
 gem "turbo-rails"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.4"
@@ -15,7 +15,6 @@ gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "tailwindcss-rails"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-
 
 # gem - Appsignal, google_drive, pg, pundit, rqrcode,turbo-rails, view_component
 
