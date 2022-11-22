@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_04_191316) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_22_151820) do
   create_table "boards", force: :cascade do |t|
     t.string "name"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_boards_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "list_id", null: false
+    t.string "title"
+    t.string "class_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer "board_id", null: false
+    t.string "title"
+    t.string "class_list"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_lists_on_board_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_04_191316) do
   end
 
   add_foreign_key "boards", "users"
+  add_foreign_key "items", "lists"
+  add_foreign_key "lists", "boards"
 end
