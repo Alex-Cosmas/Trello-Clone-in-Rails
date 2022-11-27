@@ -14,6 +14,9 @@ gem "stimulus-rails"
 gem "sprockets-rails"
 gem "sqlite3", "~> 1.4"
 gem "tailwindcss-rails"
+gem "pundit", "~> 2.2"
+gem "hotwire-rails", "~> 0.1.3"
+
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # gem - Appsignal, google_drive, pg, pundit, rqrcode,turbo-rails, view_component
@@ -35,6 +38,4 @@ group :test do
   gem "shoulda-matchers", "~> 5.0"
 end
 
-gem "pundit", "~> 2.2"
 
-gem "hotwire-rails", "~> 0.1.3"

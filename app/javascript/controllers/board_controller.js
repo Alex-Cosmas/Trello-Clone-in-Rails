@@ -1,35 +1,75 @@
 import {Controller} from "@hotwired/stimulus"
-import axios from 'axios'
+
 
 export default class extends Controller {
-
-    HEADERS = { 'ACCEPT': 'application/json'}
     connect() {
-        axios.get('/api/boards/2/lists', {headers: this.HEADERS}).then((response) => {
-            console.log('list-response:', response)
-        })
+
         const boards = [
             {
                 "id": "board-id-1",
                 "title": "Board Title",
-                "class": "bg-black, text-white",
+                "class": "bg-blue-700, text-white",
                 "item": [
                     {
                         "id": "item-id-1",
                         "title": "Item 1",
-                        "username": "username1",
+
                     },
                     {
                         "id": "item-id-2",
                         "title": "Item 2",
-                        "username": "username2",
+
                     },
                 ]
-            }
+
+            },
+            {
+                "id": "board-id-2",
+                "title": "Board Title 2",
+                "class": "bg-green-700, text-white",
+                "item": [
+                    {
+                        "id": "item-id-1",
+                        "title": "Item 1",
+
+                    },
+                    {
+                        "id": "item-id-2",
+                        "title": "Item 2",
+
+                    },
+                ]
+
+            },
+            {
+                "id": "board-id-3",
+                "title": "Board Title 3",
+                "class": "bg-red-700, text-white",
+                "item": [
+                    {
+                        "id": "item-id-1",
+                        "title": "Item 1",
+
+                    },
+                    {
+                        "id": "item-id-2",
+                        "title": "Item 2",
+
+                    },
+                ]
+
+            },
+
         ]
+
+        console.log("Hello from stimulus controller")
+        console.log(jKanban)
         var kanban = new jKanban({
             element: '#board',                                           // selector of the kanban container
-            // if false, all items are not draggable
+            gutter: '15px',                                       // gutter of the board
+            widthBoard: '250px',                                      // width of the board
+            responsivePercentage: false,                                    // if it is true I use percentage in the width of the boards and it is not necessary gutter and widthBoard
+            dragItems: true,                                         // if false, all items are not draggable
             boards: boards,                                           // json of boards
             dragBoards: true,                                         // the boards are draggable, if false only item can be dragged
             itemAddOptions: {
@@ -64,6 +104,9 @@ export default class extends Controller {
             },                     // callback when the board's button is clicked
             propagationHandlers: [],                                         // the specified callback does not cancel the browser event. possible values: "click", "context"
         })
-        console.log("kanban", kanban)
+
+        console.log('kanban', kanban)
+
+
     }
 }
