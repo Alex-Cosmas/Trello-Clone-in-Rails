@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    list { nil }
-    title { "MyString" }
+    list
+    title { Faker::Lorem.word }
     class_list { "MyString" }
   end
 end

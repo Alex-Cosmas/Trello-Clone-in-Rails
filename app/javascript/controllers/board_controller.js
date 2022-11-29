@@ -1,8 +1,20 @@
-import {Controller} from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
+// import axios from 'axios';
 
 
 export default class extends Controller {
+
+    // HEADERS = { 'ACCEPT': 'application/json' }
+
     connect() {
+
+        // axios.get('/api/boards/1/lists', { headers: this.HEADERS }).then((res) => {
+        //     console.log('list response: ', res)
+        // })
+
+        console.log("Hello from stimulus controller")
+        console.log(jKanban)
+
 
         const boards = [
             {
@@ -62,8 +74,7 @@ export default class extends Controller {
 
         ]
 
-        console.log("Hello from stimulus controller")
-        console.log(jKanban)
+
         var kanban = new jKanban({
             element: '#board',                                           // selector of the kanban container
             gutter: '15px',                                       // gutter of the board
@@ -105,7 +116,7 @@ export default class extends Controller {
             propagationHandlers: [],                                         // the specified callback does not cancel the browser event. possible values: "click", "context"
         })
 
-        console.log('kanban', kanban)
+
 
 
     }

@@ -8,14 +8,14 @@
 
 user = User.create(email: "test@email.com", password: "Amber2021*")
 
-5.times do |i|
-  Board.create(user: user, name: "Board #{i + 1}")
+5.times do |itr|
+  Board.create(user: user, name: "Board #{itr + 1}")
 end
 
 Board.find_each do |board|
-  5.times { List.create(board: board, title: "List #{i + 1}") }
+  5.times { |itr| List.create(board: board, title: "List #{itr + 1}") }
 
   board.reload.lists.each do |list|
-    5.times {|i| Item.create(list: list, title: "Item #{i + 1}")}
+    5.times { |itr| Item.create(list: list, title: "Item #{itr + 1}") }
   end
 end
