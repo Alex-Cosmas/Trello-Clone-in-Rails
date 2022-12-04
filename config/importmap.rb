@@ -18,3 +18,4 @@ pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.27/nodelibs/bro
 pin "ticky", to: "https://ga.jspm.io/npm:ticky@1.0.1/ticky-browser.js"
 
 pin "form-data", to: "https://ga.jspm.io/npm:form-data@4.0.0/lib/browser.js"
+pin "lodash-es", to: "https://ga.jspm.io/npm:lodash-es@4.17.21/lodash.js"
